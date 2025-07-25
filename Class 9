@@ -1,0 +1,25 @@
+import pygame
+import time
+pygame.init()
+
+screen = pygame.display.set_mode((600, 400))
+pygame.display.set_caption("Countdown Timer Example")
+font = pygame.font.SysFont(None, 100)
+clock = pygame.time.Clock()
+
+# Countdown from 3 to 1, then Start
+for i in range(3, 0, -1):
+    screen.fill((255, 255, 255))
+    text = font.render(str(i), True, (255, 0, 0))
+    screen.blit(text, (270, 150))
+    pygame.display.update()
+    pygame.time.delay(1000)  # Wait 1 second
+
+# Display "Start!"
+screen.fill((255, 255, 255))
+start_text = font.render("START!", True, (0, 255, 0))
+screen.blit(start_text, (180, 150))
+pygame.display.update()
+pygame.time.delay(2000)  # Wait 2 seconds
+
+pygame.quit() 
