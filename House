@@ -1,0 +1,47 @@
+import pygame
+pygame.init()
+
+# Screen setup
+screen = pygame.display.set_mode((600, 400))
+pygame.display.set_caption("Draw a House")
+
+running = True
+while running:
+    # 1️⃣ Background (Sky Blue)
+    screen.fill((135, 206, 235))  # Sky blue
+
+    # 2️⃣ Grass Rectangle (Bottom)
+    pygame.draw.rect(screen, (34, 139, 34), (0, 300, 600, 100))  # Green grass
+
+    # 3️⃣ House Body (Rectangle)
+    pygame.draw.rect(screen, (210, 180, 140), (200, 200, 200, 150))  # Light brown
+
+    # 4️⃣ Roof (Triangle)
+    pygame.draw.polygon(screen, (165, 42, 42), [(200, 200), (300, 120), (400, 200)])  # Brown roof
+
+    # 5️⃣ Sun (Circle)
+    pygame.draw.circle(screen, (255, 255, 0), (80, 80), 40)  # Yellow sun
+
+    # 6️⃣ Flagpole (Line)
+    pygame.draw.line(screen, (0, 0, 0), (300, 200), (300,60), 5)  # Black pole
+    pygame.draw.polygon(screen, (255, 0, 0), [(300,60), (330,75), (300,90)])  # Red flag 
+    pygame.draw.rect(screen, (139, 69, 19), (280, 270, 40, 80))  # Brown door
+    pygame.draw.circle(screen, (0, 0, 0), (315, 310), 5)  # Door knob
+    pygame.draw.rect(screen, (173, 216, 230), (220, 230, 40, 40))  # Light blue glass
+    pygame.draw.line(screen, (0,0,0), (240,230), (240,270), 2)     # Vertical divider
+    pygame.draw.line(screen, (0,0,0), (220,250), (260,250), 2)     # Horizontal divider
+
+    pygame.draw.rect(screen, (139, 69, 19), (500, 230, 20, 70))  # Tree trunk
+    pygame.draw.circle(screen, (0, 128, 0), (510, 200), 40)      # Main leaves
+    pygame.draw.circle(screen, (0, 128, 0), (480, 210), 30)      # Left leaves
+    pygame.draw.circle(screen, (0, 128, 0), (540, 210), 30)      # Right leaves
+
+
+    # Event handling
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.update()
+
+pygame.quit()
